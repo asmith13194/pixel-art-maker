@@ -4,25 +4,39 @@
     <meta charset="utf-8">
     <title>Adams Pixel Editor</title>
     <style media="screen">
-      h1,h2,h3 {
+      h1 {
         text-align: center;
-        color: white;
+        color: darkgreen;
+        font-size: 3em
       }
+      p {
+        text-align: center;
+        color: darkgreen;
+        font-size: 2em
+      }
+      
     </style>
   </head>
   <body id=body>
-    <h1 id=h1>
-      Adams Pixel Editor
-    </h1>
-    <table id=editor></table>
-    <h2 id=h2>Color Selector</h2>
+
+    <h1 id=h1>Adams Pixel Editor</h1>
+      <p>Select Color and Enjoy!</p>
+
+    <nav id=nav>
     <table id=colorSelector></table>
-    <h3 id=h3>Current Color</h3>
+    </nav>
+
+    <section id=smallest>
       <p id=currentColor></p>
+    </section>
+
+    <section id=working>
+    <table id=editor></table>
+    </section>
 
 
-    <script type="text/javascript" src='pixelMaker.js'>
 
-    </script>
+
+    <script type="text/javascript" src='pixelMaker.js'></script>
   </body>
 </html>

@@ -13,30 +13,49 @@ for (i = 0; i < 702; i++) {
         var editor = document.getElementById('editor')
         var shaBang = editor.appendChild(pixel);
         var clicker = document.getElementsByClassName('pixel');
-        clicker[i].addEventListener('click', color, false);
+        // clicker[i].addEventListener('click', color)
+        clicker[i].addEventListener('mousedown', color);
+        clicker[i].addEventListener('mouseover', color2);
+        clicker[i].addEventListener('mouseup', color3);
+        var click = false
 
         function color() {
+
             this.style.background = currentColor
+            click = true
+
+        }
+
+        function color2() {
+            if (click === true) {
+                this.style.background = currentColor
+            }
+        }
+
+        function color3() {
+            this.style.background = currentColor
+            click = false
         }
 
         pixel.style.width = '15px';
-        pixel.style.height = '15px';
+        pixel.style.paddingBottom = '15px';
         pixel.style.background = 'white';
         pixel.style.float = 'left';
         pixel.style.border = '.1px solid black';
 
-        editor.style.width = '450px';
+        editor.style.width = '446px';
         editor.style.height = '450px';
-        editor.style.marginLeft = '20%';
-        editor.style.marginTop = '0%'
+        editor.style.marginLeft = '2%';
+        editor.style.marginright = '20%'
         editor.style.marginBottom = '0%';
         editor.style.float = 'left'
+        editor.style.background = 'black'
 
     }
 }
 //color selector
-for (j = 0; j < 100; j++) {
-    if (j < 100) {
+for (j = 0; j < 98; j++) {
+    if (j < 98) {
         var colors = ['red', 'green', 'blue', 'yellow', 'salmon', 'orange', 'skyblue', 'brown', 'purple', 'teal'];
         var colorPixel = document.createElement('div');
         colorPixel.className = 'colorPixel'
@@ -46,6 +65,7 @@ for (j = 0; j < 100; j++) {
         // clicker[i].addEventListener('click', color, false);
         var clicker2 = document.getElementsByClassName('colorPixel');
         clicker2[j].addEventListener('click', changeColor, false);
+
         // random color generator
         function getRandomColor() {
             var letters = '0123456789ABCDEF';
@@ -61,19 +81,19 @@ for (j = 0; j < 100; j++) {
             currentColorPixel.style.background = currentColor
         }
 
-        colorPixel.style.width = '9%';
-        colorPixel.style.height = '9%';
+        colorPixel.style.width = '30px';
+        colorPixel.style.height = '30px';
         colorPixel.style.background = getRandomColor();
         colorPixel.style.float = 'left';
-        colorPixel.style.paddingBottom = '9%';
+        colorPixel.style.paddingBottom = '0%';
         colorPixel.style.border = '.1px solid black';
 
-        colorSelector.style.width = '400px';
-        colorSelector.style.height = '200px';
-        colorSelector.style.marginLeft = '10%';
+        colorSelector.style.width = '228px';
+        colorSelector.style.height = '400px';
+        colorSelector.style.marginLeft = '20%';
+        colorSelector.style.marginTop = '5px'
         colorSelector.style.float = 'left';
-
-
+        colorSelector.style.background = 'black'
     }
 }
 //current color pixel
@@ -82,15 +102,15 @@ for (k = 0; k < 1; k++) {
     currentColorPixel.className = 'currentColorPixel';
     var currentColorSelector = document.getElementById('currentColor');
     var shaBang2 = currentColorSelector.appendChild(currentColorPixel);
-    var h3 = document.getElementById('h3');
+    var smallest = document.getElementById('smallest')
 
-    currentColorPixel.style.width = '20px';
-    currentColorPixel.style.height = '20px';
+    currentColorPixel.style.width = '50px';
+    currentColorPixel.style.height = '50px';
     currentColorPixel.style.background = 'white';
-    currentColorPixel.style.marginLeft = '4%'
+    currentColorPixel.style.marginTop = '200px'
+    currentColorPixel.style.marginLeft = '2%'
+    currentColorPixel.style.marginBottom = '2%'
     currentColorPixel.style.border = '.1px solid black';
     currentColorPixel.style.float = 'left';
-    h3.style.marginLeft = '40px';
-
-
+    currentColorPixel.style.border = '2px solid black'
 }
